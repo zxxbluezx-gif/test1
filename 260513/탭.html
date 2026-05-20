@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style-type: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul{
+            display: flex;
+            position: relative;
+        }
+
+        h2>a{
+            padding: 20px 40px;
+            display: block; 
+            /* a태그는 패딩이 위아래 안먹어서 block로 잡아줌 */
+            width: 200px;
+            text-align: center;
+        }
+
+        .tab-active{
+            background-color: #369;
+            color: #fff;
+        }
+
+        .tab-content{
+            background-color: #369;
+            padding: 20px 10px;
+            display: none;
+            /* 디스플레이로 가림 */
+            position: absolute;
+            width: 820px;
+            color: #fff;
+            left: 0;
+        }
+
+        .tab-content-active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="chicken tab-active">
+            <h2><a href="#">치킨</a></h2>
+            <div class="tab-content tab-content-active">
+                <p>치킨은 닭튀김으로 토막낸 닭고기에 튀김옷 또는 반죽물을 덮어 기름에 튀겨 만든 한국의 음식이다.</p>
+            </div>
+        </li>
+        <li class="pizza ">
+            <h2><a href="#">피자</a></h2>
+            <div class="tab-content">
+                <p>피자(pizza)는 밀가루로 만든 반죽에 토마토 소스와 치즈 등 토핑을 얹어서 구워 내는 이탈리아 요리이다.</p>
+            </div>
+        </li>
+        <li class="hamburger">
+            <h2><a href="#">햄버거</a></h2>
+            <div class="tab-content">
+                <p>간단히 버거는 속 재료를 잘라낸 빵이나 롤빵 안에 넣어 만든다.</p>
+            </div>
+        </li>
+    <script>
+        function SelectorAll(el) {
+            return document.querySelectorAll(el);
+        }
+
+        for (let i = 0; i < 3; i++) {
+            SelectorAll('li')[i].addEventListener('click', function (e) {
+
+                console.log(e.currentTarget.dataset.index);
+
+                for (let j = 0; j < 3; j++) {
+                    SelectorAll('li')[j].classList.remove('tab-active');
+                }
+                e.currentTarget.classList.add('tab-active');
+            })
+        }
+    </script>
+</body>
+</html>

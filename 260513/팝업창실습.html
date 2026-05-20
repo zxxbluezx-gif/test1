@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: aquamarine;
+        }
+        .popup{
+            width: 440px;
+            height: 650px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        img{
+            width: 440px;
+            height: 570px;
+            vertical-align: top;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .button-wrap{
+            background-color: aqua;
+            height: 80px;
+        }
+
+        .button-wrap button{
+            float: left;
+            color: #333;
+            font-size: 16px;
+            font-family: 'pretendard';
+            width: 50%;
+            height: 100%;
+            border: none;
+            background-color: #fff;
+        }
+
+        .button-close
+        {
+            border-left: 1px solid #ccc;
+            border-radius: 0 0 8px;
+        }
+
+        .button-today-close{
+            border-radius: 0 0 0 8px;
+        }
+
+        .modal-open{
+            border: none;
+            margin: 50px;
+            border-radius: 30px;
+            padding: 10px 25px;
+        }
+
+        button:hover{
+            background-color: #333;
+        }
+
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="modal-open">모달창 열기</button>
+
+    <dialog class="popup">
+        <img src="popup.jpg" alt="처음 만나는 뷰티">
+        <div class="button-wrap">
+            <button type="button" class="button-today-close">오늘 하루 안 보기</button>
+            <button type="button" class="button-close">닫기</button>
+        </div>
+    </dialog>
+    <!-- <script>
+        document.querySelector('.modal-open').addEventListener('click', function(){
+        document.querySelector('.popup').style.display = 'block';
+    })
+        document.querySelector('.modal-open').addEventListener('click', function(){
+        document.querySelector('.popup').style.display = 'none';
+    })
+    </script> -->
+</body>
+</html>
